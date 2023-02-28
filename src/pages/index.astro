@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import Support from '../components/Support.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="aarthificial">
+  <main class="container">
+    <Hero />
+    <Projects />
+    <h2 class="heading">BECOME A PATRON</h2>
+    <Support />
+    <h2 class="heading">CONTACT</h2>
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    max-width: 1056px;
+    margin: 0 auto;
+    padding: 0 var(--spacing);
+  }
+
+  .heading {
+    text-align: center;
+    margin: 96px 0 48px;
+  }
+</style>

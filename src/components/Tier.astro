@@ -1,0 +1,75 @@
+---
+export interface Props {
+  name: string;
+  price: number;
+}
+
+const {name, price} = Astro.props;
+---
+
+<a class="card" href="https://www.patreon.com/aarthificial" target="_blank">
+  <h3 class="name"><small>{name}</small></h3>
+  <div class="icon">
+    <slot name="icon" />
+  </div>
+  <div class="price">${price} / month</div>
+  <small class="vat">plus VAT</small>
+  <div class="button link">JOIN</div>
+  <p><slot /></p>
+</a>
+
+<style>
+  .card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: var(--spacing);
+    flex-basis: 320px;
+    flex-grow: 1;
+    max-width: 330px;
+  }
+
+  .card:hover {
+    outline: 2px solid var(--theme);
+  }
+
+  .icon {
+    width: 50vw;
+    max-width: 160px;
+    align-self: center;
+  }
+
+  .price {
+    font-family: var(--font-family-heading);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    font-size: 32px;
+  }
+
+  .name {
+    text-align: center;
+    font-family: var(--font-family-base);
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .vat {
+    text-align: center;
+  }
+
+  .button {
+    margin: var(--spacing) 0;
+  }
+
+  .preview {
+    width: 50%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .description {
+    margin: 0;
+  }
+</style>

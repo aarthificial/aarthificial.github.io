@@ -1,0 +1,24 @@
+.root img {
+  transition: filter 0.1s;
+}
+
+.root:hover img {
+  filter: brightness(0.54);
+}
+
+.root svg {
+  color: white;
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: calc(50% - 48px);
+  left: calc(50% - 48px);
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+
+.root:hover svg {
+  opacity: 1;
+}

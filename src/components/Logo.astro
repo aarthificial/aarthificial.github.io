@@ -1,0 +1,163 @@
+<svg class="logo" viewBox="-24 -24 48 48">
+  <defs>
+    <clipPath id="small-circle">
+      <path d="M-1 -10A10 10 0 1 0 1 -10M-24 -24h48v48h-48" fill-rule="evenodd">
+      </path>
+    </clipPath>
+    <clipPath id="bigger-circle">
+      <path d="M-1 -16A16 16 0 1 0 1 -16M-24 -24h48v48h-48" fill-rule="evenodd">
+      </path>
+    </clipPath>
+    <clipPath id="arm">
+      <rect y="-24" width="24" height="48"></rect>
+    </clipPath>
+  </defs>
+  <g class="root">
+    <g clip-path="url(#small-circle)">
+      <path class="line dark handle" d="M0 0l0 -16"></path>
+      <path class="line left-arm" d="M0 0v22"> </path>
+    </g>
+    <g clip-path="url(#bigger-circle)">
+      <path class="line dark right-arm" d="M0 0v22"></path>
+    </g>
+    <circle class="line" r="10" stroke-width="2" fill="transparent"></circle>
+    <g class="circle-arm-group" clip-path="url(#arm)">
+      <path
+        class="line circle-arm"
+        d="M0 16A16 16 0 0 0 13.9 -8"
+        fill="transparent"
+      >
+      </path>
+    </g>
+  </g>
+</svg>
+
+<style>
+  .logo {
+    display: block;
+  }
+
+  .root {
+    --duration: 0.9s;
+    --easing: cubic-bezier(0.76, 0, 0.41, 1);
+    animation: appear-svg cubic-bezier(0.14, 0.84, 0.56, 0.99) 0.9s;
+  }
+
+  .line {
+    stroke-width: 2;
+    stroke: #242424;
+  }
+  .dark {
+    stroke: #141414;
+  }
+  html[data-theme='dark'] .line {
+    stroke: #ffffff;
+  }
+  html[data-theme='dark'] .dark {
+    stroke: #eeeeee;
+  }
+
+  .circle-arm-group {
+    animation: var(--duration) var(--easing) appear-circle-arm-group;
+    rotate: 30deg;
+  }
+  .circle-arm {
+    animation: var(--duration) var(--easing) appear-circle-arm;
+  }
+  .left-arm {
+    animation: var(--duration) var(--easing) appear-left-arm;
+    rotate: 30deg;
+  }
+  .handle {
+    animation: var(--duration) var(--easing) scale-in;
+  }
+  .right-arm {
+    animation: var(--duration) var(--easing) appear-right-arm;
+    rotate: -30deg;
+  }
+
+  @keyframes appear-svg {
+    0% {
+      scale: 0;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
+  @keyframes delay {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes scale-in {
+    0% {
+      rotate: 180deg;
+      scale: 1 0.5;
+    }
+    100% {
+      rotate: 0deg;
+      scale: 1 1;
+    }
+  }
+
+  @keyframes appear-circle-arm-group {
+    0% {
+      rotate: 180deg;
+    }
+    100% {
+      rotate: 30deg;
+    }
+  }
+
+  @keyframes appear-left-arm {
+    0% {
+      scale: 1 0.5;
+      rotate: 180deg;
+    }
+    100% {
+      scale: 1;
+      rotate: 30deg;
+    }
+  }
+
+  @keyframes appear-right-arm {
+    0% {
+      scale: 1 0.5;
+      rotate: 160deg;
+    }
+    20% {
+      scale: 1 0.5;
+      rotate: 160deg;
+    }
+    100% {
+      scale: 1;
+      rotate: -30deg;
+    }
+  }
+
+  @keyframes appear-circle-arm {
+    0% {
+      rotate: 180deg;
+    }
+    20% {
+      rotate: 180deg;
+    }
+    100% {
+      rotate: 0deg;
+    }
+  }
+
+  @keyframes appear {
+    0% {
+      rotate: 180deg;
+    }
+    100% {
+      rotate: 30deg;
+    }
+  }
+</style>

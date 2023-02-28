@@ -1,0 +1,173 @@
+---
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+export interface Props {
+  title: string;
+}
+
+const {title} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="Concise videos about the technical side of game development"
+    />
+    <meta property="og:image" content="/astortion.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="keywords"
+      content="aarthificial, gamedev, devlog, astortion, motion canvas"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <script is:inline>
+      document.documentElement.dataset.theme =
+        localStorage.getItem('theme') ?? 'dark';
+    </script>
+  </head>
+  <body>
+    <ThemeToggle client:load="solid" />
+    <slot />
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: 'Sen';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/sen/v7/6xKjdSxYI9_3nPWN.woff2)
+      format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+      U+2215, U+FEFF, U+FFFD;
+  }
+
+  :root {
+    --spacing: 24px;
+    --theme: #242424;
+    --background-color: #f8f8f8;
+    --surface-color: #fff;
+    --backdrop-color: rgba(247, 247, 247, 0.54);
+    --shadow-color: rgba(0, 0, 0, 0.12);
+    --font-color: rgba(0, 0, 0, 0.87);
+    --font-color-contrast: rgba(255, 255, 255, 1);
+    --font-color-secondary: rgba(0, 0, 0, 0.6);
+    --font-family-base: Roboto, sans-serif;
+    --font-family-heading: 'Sen', Roboto, sans-serif;
+    --border-radius: 8px;
+  }
+  [data-theme='dark']:root {
+    --theme: #eee;
+    --background-color: #141414;
+    --backdrop-color: rgba(20, 20, 20, 0.54);
+    --shadow-color: rgba(255, 255, 255, 0.12);
+    --surface-color: #242424;
+    --font-color: rgba(255, 255, 255, 0.87);
+    --font-color-contrast: rgba(0, 0, 0, 0.87);
+    --font-color-secondary: rgba(255, 255, 255, 0.6);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-family-base);
+    background-color: var(--background-color);
+    color: var(--font-color);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-heading);
+    font-weight: 600;
+  }
+
+  button {
+    background-color: unset;
+    color: unset;
+    appearance: none;
+    padding: unset;
+    border: unset;
+    margin: unset;
+  }
+
+  iframe,
+  img,
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .secondary,
+  small {
+    color: var(--font-color-secondary);
+  }
+
+  small {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .link {
+    background-color: var(--theme);
+    color: var(--font-color-contrast);
+    line-height: 24px;
+    padding: 8px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 24px;
+    appearance: none;
+    border: unset;
+    margin: unset;
+    font-family: var(--font-family-heading);
+    text-align: center;
+    box-shadow: 0 0 0 0 var(--shadow-color);
+    transition: box-shadow 0.1s, translate 0.1s;
+  }
+
+  a:hover .link,
+  .link:hover {
+    translate: 0 -4px;
+    box-shadow: 0 8px 0 0 var(--shadow-color);
+  }
+
+  .link.secondary {
+    background-color: unset;
+    color: var(--font-color);
+    border: 2px solid var(--theme);
+  }
+
+  .primary {
+    fill: var(--theme);
+  }
+
+  .secondary {
+    fill: var(--shadow-color);
+  }
+</style>

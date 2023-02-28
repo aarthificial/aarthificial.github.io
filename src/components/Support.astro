@@ -1,0 +1,56 @@
+---
+import Tier from './Tier.astro';
+---
+
+<div class="container">
+  <Tier name="Vertex" price="1">
+    <svg viewBox="0 0 32 32" slot="icon">
+      <path
+        d="M16,10c-3.313,0 -6,2.687 -6,6c0,3.313 2.687,6 6,6c3.313,0 6,-2.687 6,-6c0,-3.313 -2.687,-6 -6,-6m0,2c2.206,0 4,1.794 4,4c0,2.206 -1.794,4 -4,4c-2.206,0 -4,-1.794 -4,-4c0,-2.206 1.794,-4 4,-4"
+        class="primary"></path>
+      <path
+        d="M11.1,22.32l-2.39,2.39l-1.42,-1.42l2.39,-2.39c0.41,0.53 0.89,1.01 1.42,1.42"
+        class="secondary"></path>
+      <path
+        d="M24.71,8.71l-2.39,2.39c-0.41,-0.53 -0.89,-1.01 -1.42,-1.42l2.39,-2.39l1.42,1.42Z"
+        class="secondary"></path>
+      <path
+        d="M23.29,24.71l-2.39,-2.39c0.53,-0.41 1.01,-0.89 1.42,-1.42l2.39,2.39l-1.42,1.42Z"
+        class="secondary"></path>
+    </svg>
+    You'll get access to new videos a day before the premiere
+  </Tier>
+  <Tier name="Fragment" price="5">
+    <svg viewBox="0 0 32 32" slot="icon">
+      <path
+        d="M16,16l-6,0l0,-6l6,0l0,6Zm-8,2l10,0l0,-10l-10,0l0,10Z"
+        style="fill-rule:nonzero;"
+        class="primary"></path>
+      <rect x="20" y="14" width="4" height="4" class="secondary"></rect>
+      <rect x="14" y="20" width="4" height="4" class="secondary"></rect>
+      <rect x="20" y="20" width="2" height="2" class="secondary"></rect>
+    </svg>
+    You'll get access to new videos a day before the premiere. Your name will be
+    featured at the end of my videos.
+  </Tier>
+  <Tier name="Compute" price="10">
+    <svg viewBox="0 0 32 32" slot="icon">
+      <path d="M10,10l0,12l2,0l0,2l-4,0l0,-16l4,0l0,2l-2,0Z" class="primary"
+      ></path>
+      <rect x="20" y="22" width="4" height="2" class="secondary"></rect>
+      <path d="M22,10l-2,0l0,-2l4,0l0,12l-2,0l0,-10Z" class="secondary"></path>
+    </svg>
+    You'll get access to new videos a day before the premiere. Your name will be
+    featured at the end of my videos. You'll get exclusive access to my projects
+    a month before their release.
+  </Tier>
+</div>
+
+<style>
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing);
+  }
+</style>

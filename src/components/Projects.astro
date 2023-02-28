@@ -1,0 +1,80 @@
+---
+import Video from '../components/Video';
+import Project from '../components/Project.astro';
+---
+
+<Project
+  title="Astortion"
+  actions={{
+    WISHLIST: 'https://store.steampowered.com/app/1993980/Astortion/',
+    'WATCH DEVLOGS':
+      'https://www.youtube.com/playlist?list=PLh0j6fxciWbLVMwgAGx6UprZZQGvD-cYG',
+  }}
+>
+  <img
+    src="astortion.png"
+    alt="Astoriton"
+    style="background-color: #2E3438"
+    slot="header"
+  />
+  Astortion is a minimalistic, atmospheric puzzle-platformer that revolves around
+  gravity. Explore the ruins of the most pivotal research facility on earth, unlock
+  new abilities that mess with spacetime itself, and get to the bottom of what is
+  going on.
+</Project>
+
+<Project
+  title="Motion Canvas"
+  actions={{'TRY IT OUT': 'https://motioncanvas.io/'}}
+>
+  <Video
+    src="/motion-canvas.png"
+    id="H5GETOP7ivs"
+    alt="Motion Canvas"
+    client:visible="solid"
+    color="#242424"
+    slot="header"
+  />
+  Motion Canvas is an open source tool for making informative animations and synchronize
+  them with voice-overs. You write animations in TypeScript, using generators. Meanwhile
+  a web-based editor provides you with a real-time preview of your creation.
+</Project>
+
+<Project
+  title="Typewriter"
+  actions={{
+    'WATCH DEVLOGS':
+      'https://www.youtube.com/playlist?list=PLh0j6fxciWbLLRtBC4dvn0TWEgHxDkWww',
+  }}
+>
+  <Video
+    src="/typewriter.png"
+    id="1LlF5p5Od6A"
+    alt="Typewriter"
+    client:visible="solid"
+    color="#383838"
+    slot="header"
+  />
+  Typewriter is a Unity package for creating context-aware dialogue. Inspired by
+  the mechanism used in the Left 4 Dead series, it lets you model the dialogue as
+  a set of rules that have to be met for a given line to occur.
+</Project>
+
+<Project
+  title="Reanimator"
+  actions={{
+    'TRY IT OUT': 'https://github.com/aarthificial/reanimation',
+  }}
+>
+  <Video
+    src="/reanimator.png"
+    id="5aHhmRiVpZI"
+    alt="Reanimator"
+    client:visible="solid"
+    color="#181818"
+    slot="header"
+  />
+  Reanimator is a custom animator for Unity created to simplify the development of
+  Astortion. It's tailored specifically for traditional animations - animations represented
+  by a series of cels displayed one after the other.
+</Project>

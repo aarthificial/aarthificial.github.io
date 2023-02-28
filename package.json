@@ -1,0 +1,23 @@
+{
+  "name": "aarthificial",
+  "private": true,
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^2.0.2",
+    "astro": "^2.0.8",
+    "solid-js": "^1.6.10"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4"
+  }
+}

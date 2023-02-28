@@ -1,0 +1,79 @@
+---
+export interface Props {
+  title: string;
+  actions: Record<string, string>;
+}
+
+const {title, actions} = Astro.props;
+---
+
+<div class="card">
+  <div class="preview">
+    <slot name="header" />
+  </div>
+  <div class="info">
+    <h3 class="title">{title}</h3>
+    <p class="description">
+      <slot />
+    </p>
+    <div class="actions">
+      {
+        Object.entries(actions).map(([text, href], index) => (
+          <a
+            class={`link ${index === 0 ? '' : 'secondary'}`}
+            href={href}
+            target="_blank"
+          >
+            {text}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  .card {
+    display: flex;
+    gap: var(--spacing);
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .preview {
+    flex-basis: 492px;
+    max-width: 492px;
+    flex-shrink: 1;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .info {
+    max-width: 492px;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+  }
+
+  .title {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .description {
+    margin: 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(var(--spacing) / 2);
+  }
+</style>

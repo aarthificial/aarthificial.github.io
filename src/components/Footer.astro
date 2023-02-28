@@ -1,0 +1,99 @@
+---
+import GitHub from '../icons/GitHub.astro';
+import Instagram from '../icons/Instagram.astro';
+import Itchio from '../icons/Itchio.astro';
+import Patreon from '../icons/Patreon.astro';
+import Tumblr from '../icons/Tumblr.astro';
+import YouTube from '../icons/YouTube';
+---
+
+<footer>
+  <div class="container">
+    <div class="copyright">© 2023 aarthificial</div>
+    <div class="socials">
+      <a
+        class="social"
+        href="https://www.youtube.com/@aarthificial"
+        title="YouTube"
+        target="_blank"
+      >
+        <YouTube />
+      </a>
+      <a
+        class="social"
+        href="https://www.patreon.com/aarthificial"
+        title="Patreon"
+        target="_blank"
+      >
+        <Patreon />
+      </a>
+      <a class="social" href="https://github.com/aarthificial" title="GitHub">
+        <GitHub />
+      </a>
+      <a
+        class="social"
+        href="https://www.tumblr.com/aarthificial"
+        title="tumblr."
+        target="_blank"
+      >
+        <Tumblr />
+      </a>
+      <a
+        class="social"
+        href="https://www.instagram.com/aarthificial_"
+        title="Instagram"
+        target="_blank"
+      >
+        <Instagram />
+      </a>
+      <a
+        class="social"
+        href="https://aarthificial.itch.io/"
+        title="itch.io"
+        target="_blank"
+      >
+        <Itchio />
+      </a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--surface-color);
+  }
+
+  .container {
+    max-width: 1056px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: var(--spacing);
+    gap: var(--spacing);
+  }
+
+  .copyright {
+    margin-right: auto;
+    flex-grow: 10000;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .social {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.1s;
+  }
+
+  .social:hover {
+    background-color: var(--background-color);
+  }
+</style>

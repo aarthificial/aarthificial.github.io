@@ -1,0 +1,104 @@
+---
+import Logo from './Logo.astro';
+---
+
+<div class="hero">
+  <div class="logo">
+    <Logo />
+  </div>
+  <div class="info">
+    <h1 class="title">aarthificial</h1>
+    <p class="description">
+      Concise videos about the technical side of game development
+    </p>
+    <div class="stats">
+      <div class="stat">
+        <h2>subscribers</h2>
+        <div class="number">126,896</div>
+      </div>
+      <div class="stat">
+        <h2>videos</h2>
+        <div class="number">39</div>
+      </div>
+      <div class="stat">
+        <h2>views</h2>
+        <div class="number">4,493,725</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing);
+    margin: 48px auto;
+    max-width: 320px;
+  }
+
+  .logo {
+    width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) / 2);
+  }
+
+  .title {
+    margin: 0;
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .description {
+    margin: 0;
+    text-align: center;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .number {
+    font-family: var(--font-family-heading);
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .stat h2 {
+    font-family: var(--font-family-base);
+    color: var(--font-color-secondary);
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  @media screen and (min-width: 540px) {
+    .hero {
+      flex-direction: row;
+      margin: 96px auto;
+      max-width: 520px;
+    }
+    .title,
+    .description {
+      text-align: left;
+    }
+    .stats {
+      justify-content: start;
+    }
+  }
+</style>
