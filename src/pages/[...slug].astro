@@ -1,0 +1,39 @@
+---
+export function getStaticPaths() {
+  return Object.entries(JSON.parse(import.meta.env.AA_REDIRECTS)).map(
+    ([slug, props]) => ({
+      params: {slug},
+      props,
+    }),
+  );
+}
+
+export interface Props {
+  title: string;
+  message: string;
+  img: string;
+  description: string;
+  to: string;
+}
+
+const {title, message, to, description, img} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Refresh" content={`0; url='${to}'`} />
+    <meta name="description" content={description} />
+    <meta property="og:image" content={img} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    {message}
+    <a href={to}>Click here if nothing happened</a>
+  </body>
+</html>
