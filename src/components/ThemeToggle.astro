@@ -13,6 +13,11 @@ import DarkModeIcon from '../icons/DarkModeIcon';
 </button>
 
 <script>
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  media.addEventListener('change', event => {
+    document.documentElement.dataset.theme = event.matches ? 'dark' : 'light';
+    localStorage.removeItem('theme');
+  });
   document.getElementById('theme-toggle').addEventListener('click', () => {
     const theme =
       document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';

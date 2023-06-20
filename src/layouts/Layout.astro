@@ -30,7 +30,10 @@ const {title} = Astro.props;
     <title>{title}</title>
     <script is:inline>
       document.documentElement.dataset.theme =
-        localStorage.getItem('theme') ?? 'dark';
+        localStorage.getItem('theme') ??
+        (window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light');
     </script>
   </head>
   <body>
